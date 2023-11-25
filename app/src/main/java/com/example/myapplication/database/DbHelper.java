@@ -12,7 +12,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Bảng người dùng
-        db.execSQL("CREATE TABLE User(" +
+        db.execSQL("CREATE TABLE NguoiDung(" +
                 "Email text primary key," +
                 "Password text," +
                 "FullName text)"
