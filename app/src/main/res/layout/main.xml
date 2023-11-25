@@ -140,7 +140,7 @@
                     android:id="@+id/tvTraCuu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tra cứu dịch vụ"
+                    android:text="Tra cứu dịch vụ"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
