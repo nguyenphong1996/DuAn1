@@ -23,9 +23,11 @@
         android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
+
             android:id="@+id/edtRegister"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
+            android:background="@drawable/cus_edittext"
             android:drawablePadding="10dp"
             android:hint="Username"
             android:drawableLeft="@drawable/baseline_people_24"
@@ -40,7 +42,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtRegisterPass"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
+            android:background="@drawable/cus_edittext"
             android:drawablePadding="10dp"
             android:hint="Password"
             android:drawableLeft="@drawable/baseline_vpn_key_24"
@@ -55,7 +58,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtRePass"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
+            android:background="@drawable/cus_edittext"
             android:drawablePadding="10dp"
             android:hint="Re-Password"
             android:drawableLeft="@drawable/baseline_vpn_key_24"
@@ -70,7 +74,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
+            android:background="@drawable/cus_edittext"
             android:drawablePadding="10dp"
             android:hint="Email"
             android:drawableLeft="@drawable/baseline_mark_email_read_24"
@@ -79,10 +84,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="15dp">
         <Button
+            android:background="@drawable/cus_btn_forgetpass_back"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Quay lại"
@@ -92,6 +99,7 @@
             android:textStyle="bold"
             android:textColor="@color/black"/>
         <Button
+            android:background="@drawable/cus_btn_forgetpass_send"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Đăng ký"
