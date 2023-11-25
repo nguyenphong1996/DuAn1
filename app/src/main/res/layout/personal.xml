@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="28dp"
+            android:background="@mipmap/back"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên"
+            android:layout_marginLeft="125dp"
+            android:textStyle="bold"
+            android:textSize="35dp"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:layout_gravity="center"/>
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="590dp"
+        android:background="@drawable/rounded_corner"
+        android:orientation="vertical"
+        android:layout_margin="17dp">
+
+        <ImageView
+            android:layout_margin="10dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@mipmap/img"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="LS Quý"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+        <LinearLayout
+            android:layout_width="370dp"
+            android:layout_height="150dp"
+            android:background="@drawable/rounded_corner1"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thông tin cá nhân"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_margin="10dp"
+                />
+            <View
+                android:layout_width="348dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đổi mật khẩu"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_margin="10dp"/>
+            <View
+                android:layout_width="348dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đăng xuất"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="370dp"
+            android:layout_height="100dp"
+            android:background="@drawable/rounded_corner1"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Giới thiệu"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_margin="10dp"
+                />
+            <View
+                android:layout_width="348dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Góp ý"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/lichsu"
+                android:layout_width="160dp"
+                android:layout_height="100dp"
+                android:background="@drawable/rounded_corner1"
+                app:backgroundTint="@null"
+                android:text="Lịch sử đơn hàng "
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"
+                android:textAlignment="center" />
+            <Button
+                android:id="@+id/dk"
+                android:layout_width="160dp"
+                android:layout_height="100dp"
+                android:background="@drawable/rounded_corner1"
+                app:backgroundTint="@null"
+                android:text="Điều khoản "
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"
+                android:textAlignment="center" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
