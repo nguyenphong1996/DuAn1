@@ -23,7 +23,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(data);
 
         // Bảng sản phẩm
-        db.execSQL("CREATE TABLE Item(" +
+        db.execSQL("CREATE TABLE DichVu(" +
                 "Id integer primary key autoincrement," +
                 "Name text," +
                 "Price integer," +
