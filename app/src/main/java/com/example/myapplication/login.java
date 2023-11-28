@@ -24,4 +24,7 @@ public class login extends AppCompatActivity {
         img1 = findViewById(R.id.imgBtnGoogle);
         img2 = findViewById(R.id.imgBtnFb);
     }
+    private void init(){
+
+    }
 }

@@ -12,7 +12,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 public class GiaoHang extends AppCompatActivity {
     TabLayout tabL;
     ViewPager2 viewP;
-    MyViewPagerAdapter viewPagerAdap ter;
+    MyViewPagerAdapter viewPagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

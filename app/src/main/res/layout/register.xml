@@ -24,7 +24,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
 
-            android:id="@+id/edtRegister"
+            android:id="@+id/edtRegisterUser"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/cus_edittext"
@@ -72,7 +72,7 @@
         android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edtEmail"
+            android:id="@+id/edtRegisterEmail"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:background="@drawable/cus_edittext"
@@ -97,8 +97,10 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:id="@+id/btn_back"/>
         <Button
+            android:id="@+id/btn_register"
             android:background="@drawable/cus_btn_forgetpass_send"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
