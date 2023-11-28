@@ -11,11 +11,11 @@ import com.example.myapplication.model.DichVu;
 
 import java.util.ArrayList;
 
-public class DAO_DichVu {
+public class DAO_TaiKhoanND {
     DbHelper helper;
     SQLiteDatabase db;
 
-    public DAO_DichVu(Context context) {
+    public DAO_TaiKhoanND(Context context) {
         this.helper = new DbHelper(context);
     }
 
