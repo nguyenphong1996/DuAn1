@@ -1,6 +1,7 @@
 package com.example.myapplication.model;
 
 public class TaiKhoanND {
+    private int id_TaiKhoan;
     private String email, matKhau, tenDangNhap;
 
     public TaiKhoanND() {
@@ -10,6 +11,14 @@ public class TaiKhoanND {
         this.email = email;
         this.matKhau = matKhau;
         this.tenDangNhap = fullName;
+    }
+
+    public int getId_TaiKhoan() {
+        return id_TaiKhoan;
+    }
+
+    public void setId_TaiKhoan(int id_TaiKhoan) {
+        this.id_TaiKhoan = id_TaiKhoan;
     }
 
     public String getEmail() {
