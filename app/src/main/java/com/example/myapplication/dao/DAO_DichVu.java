@@ -20,7 +20,7 @@ public class DAO_DichVu {
     }
 
     // Lấy danh sách DichVu đang bán
-    public ArrayList<DichVu> getDichVusOnSell() {
+    public ArrayList<DichVu> getListDV() {
         db = helper.getReadableDatabase();
         ArrayList<DichVu> list = new ArrayList<DichVu>();
         Cursor cursor = db.rawQuery("select * from DichVu", null);
@@ -38,35 +38,13 @@ public class DAO_DichVu {
         return list;
     }
 
-    // Lấy danh sách DichVu đang mua
-    public ArrayList<DichVu> getDichVusOnBuy() {
-        db = helper.getReadableDatabase();
-        ArrayList<DichVu> list = new ArrayList<DichVu>();
-        Cursor cursor = db.rawQuery("select * from DichVu where Is_buy = 1", null);
-        if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
-            do {
-                list.add(new DichVu(
-                        cursor.getInt(0),
-                        cursor.getString(1),
-                        cursor.getInt(2),
-                        cursor.getInt(3),
-                        true
-                ));
-            } while (cursor.moveToNext());
-        }
-
-        return list;
-    }
-
-    public boolean insertDichVu(DichVu DichVu, boolean isBuy) {
+    public boolean insertDichVu(DichVu dichVu) {
         db = helper.getWritableDatabase();
         db.beginTransaction();
         ContentValues values = new ContentValues();
-        values.put("Name", DichVu.getName());
-        values.put("Price", DichVu.getPrice());
-        values.put("Quantity", DichVu.getQuantity());
-        values.put("Is_buy", isBuy);
+        values.put("Ten_DV", dichVu.getTen_DV());
+        values.put("GiaTien", dichVu.getGiaTien());
+        values.put("MoTa", dichVu.getMota());
 
         long check = db.insert("DichVu", null, values);
         db.setTransactionSuccessful();
@@ -74,37 +52,36 @@ public class DAO_DichVu {
         return check != -1;
     }
 
-    public boolean updateDichVu(DichVu DichVu) {
-        Log.d("DAO_DichVu", "Updating DichVu with ID: " + DichVu.getId());
+    public boolean updateDichVu(DichVu dichVu) {
+        Log.d("DAO_DichVu", "Updating DichVu with ID: " + dichVu.getId_DV());
         db = helper.getWritableDatabase();
         db.beginTransaction();
         ContentValues values = new ContentValues();
-        values.put("Name", DichVu.getName());
-        values.put("Price", DichVu.getPrice());
-        values.put("Quantity", DichVu.getQuantity());
-        values.put("Is_buy", DichVu.isBuy());
+        values.put("Ten_DV", dichVu.getTen_DV());
+        values.put("GiaTien", dichVu.getGiaTien());
+        values.put("MoTa", dichVu.getMota());
 
         // Cập nhật dữ liệu của DichVu trong cơ sở dữ liệu
         int check = db.update(
                 "DichVu", // Tên bảng
                 values, // Dữ liệu cần cập nhật
                 "Id = ?", // Điều kiện WHERE
-                new String[]{String.valueOf(DichVu.getId())} // Tham số cho điều kiện WHERE
+                new String[]{String.valueOf(dichVu.getId_DV())} // Tham số cho điều kiện WHERE
         );
         db.setTransactionSuccessful();
         db.endTransaction();
         return check > 0;
     }
 
-    public boolean deleteDichVu(DichVu DichVu) {
-        Log.d("DAO_DichVu", "Deleting DichVu with ID: " + DichVu.getId());
+    public boolean deleteDichVu(DichVu dichVu) {
+        Log.d("DAO_DichVu", "Deleting DichVu with ID: " + dichVu.getId_DV());
         db = helper.getWritableDatabase();
         db.beginTransaction();
-        long result = db.delete("DichVu", "Id = ?", new String[]{String.valueOf(DichVu.getId())});
+        long result = db.delete("DichVu", "Id = ?", new String[]{String.valueOf(dichVu.getId_DV())});
         db.setTransactionSuccessful();
         db.endTransaction();
         return result > 0;
     }
 
 
-}}
+}
