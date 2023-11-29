@@ -65,7 +65,7 @@ public class DAO_DichVu {
         int check = db.update(
                 "DichVu", // Tên bảng
                 values, // Dữ liệu cần cập nhật
-                "Id = ?", // Điều kiện WHERE
+                "Id_DV = ?", // Điều kiện WHERE
                 new String[]{String.valueOf(dichVu.getId_DV())} // Tham số cho điều kiện WHERE
         );
         db.setTransactionSuccessful();
@@ -77,7 +77,7 @@ public class DAO_DichVu {
         Log.d("DAO_DichVu", "Deleting DichVu with ID: " + dichVu.getId_DV());
         db = helper.getWritableDatabase();
         db.beginTransaction();
-        long result = db.delete("DichVu", "Id = ?", new String[]{String.valueOf(dichVu.getId_DV())});
+        long result = db.delete("DichVu", "Id_DV = ?", new String[]{String.valueOf(dichVu.getId_DV())});
         db.setTransactionSuccessful();
         db.endTransaction();
         return result > 0;

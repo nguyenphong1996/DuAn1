@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.example.myapplication.database.DbHelper;
 import com.example.myapplication.model.DichVu;
+import com.example.myapplication.model.TaiKhoanND;
 
 import java.util.ArrayList;
 
@@ -20,17 +21,17 @@ public class DAO_TaiKhoanND {
     }
 
     // Lấy danh sách DichVu đang bán
-    public ArrayList<DichVu> getListDV() {
+    public ArrayList<TaiKhoanND> getListTK() {
         db = helper.getReadableDatabase();
-        ArrayList<DichVu> list = new ArrayList<DichVu>();
-        Cursor cursor = db.rawQuery("select * from DichVu", null);
+        ArrayList<TaiKhoanND> list = new ArrayList<TaiKhoanND>();
+        Cursor cursor = db.rawQuery("select * from TaiKhoanND", null);
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
             do {
-                list.add(new DichVu(
+                list.add(new TaiKhoanND(
                         cursor.getInt(0),
                         cursor.getString(1),
-                        cursor.getFloat(2),
+                        cursor.getString(2),
                         cursor.getString(3)
                 ));
             } while (cursor.moveToNext());
@@ -38,46 +39,84 @@ public class DAO_TaiKhoanND {
         return list;
     }
 
-    public boolean insertDichVu(DichVu dichVu) {
+    public boolean insertTaiKhoan(TaiKhoanND taiKhoan) {
         db = helper.getWritableDatabase();
         db.beginTransaction();
         ContentValues values = new ContentValues();
-        values.put("Ten_DV", dichVu.getTen_DV());
-        values.put("GiaTien", dichVu.getGiaTien());
-        values.put("MoTa", dichVu.getMota());
+        values.put("Email", taiKhoan.getEmail());
+        values.put("MatKhau", taiKhoan.getMatKhau());
+        values.put("TenDangNhap", taiKhoan.getTenDangNhap());
 
-        long check = db.insert("DichVu", null, values);
+        long check = db.insert("TaiKhoanND", null, values);
         db.setTransactionSuccessful();
         db.endTransaction();
         return check != -1;
     }
 
-    public boolean updateDichVu(DichVu dichVu) {
-        Log.d("DAO_DichVu", "Updating DichVu with ID: " + dichVu.getId_DV());
+    public boolean updateMatKhauTK(TaiKhoanND taiKhoan) {
+        Log.d("DAO_TaiKhoanND", "Updating TaiKhoanND with ID: " + taiKhoan.getId_TaiKhoan());
         db = helper.getWritableDatabase();
         db.beginTransaction();
         ContentValues values = new ContentValues();
-        values.put("Ten_DV", dichVu.getTen_DV());
-        values.put("GiaTien", dichVu.getGiaTien());
-        values.put("MoTa", dichVu.getMota());
+        values.put("MatKhau", taiKhoan.getMatKhau());
 
-        // Cập nhật dữ liệu của DichVu trong cơ sở dữ liệu
-        int check = db.update(
-                "DichVu", // Tên bảng
-                values, // Dữ liệu cần cập nhật
-                "Id = ?", // Điều kiện WHERE
-                new String[]{String.valueOf(dichVu.getId_DV())} // Tham số cho điều kiện WHERE
-        );
-        db.setTransactionSuccessful();
-        db.endTransaction();
-        return check > 0;
+        try {
+            // Cập nhật dữ liệu của TaiKhoanNC trong cơ sở dữ liệu
+            int check = db.update(
+                    "TaiKhoanND", // Tên bảng
+                    values, // Dữ liệu cần cập nhật
+                    "Id_TaiKhoan = ?", // Điều kiện WHERE
+                    new String[]{String.valueOf(taiKhoan.getId_TaiKhoan())} // Tham số cho điều kiện WHERE
+            );
+            db.setTransactionSuccessful();
+            return check > 0;
+        } catch (Exception e) {
+            Log.e("DAO_TaiKhoanND", "Lỗi khi cố gắng thay đổi mật khẩu!", e);
+            return false;
+        } finally {
+            if (db != null) {
+                db.endTransaction();
+                db.close();
+            }
+        }
+    }
+
+    public boolean updateTenDN(TaiKhoanND taiKhoan) {
+        Log.d("DAO_TaiKhoanND", "Updating TaiKhoanND with ID: " + taiKhoan.getId_TaiKhoan());
+        db = helper.getWritableDatabase();
+        db.beginTransaction();
+        ContentValues values = new ContentValues();
+        values.put("TenDangNhap", taiKhoan.getTenDangNhap());
+
+        try {
+            // Cập nhật tên đăng nhập của TaiKhoanNC trong cơ sở dữ liệu
+            int check = db.update(
+                    "TaiKhoanND", // Tên bảng
+                    values, // Dữ liệu cần cập nhật
+                    "Id_TaiKhoan = ?", // Điều kiện WHERE
+                    new String[]{String.valueOf(taiKhoan.getId_TaiKhoan())} // Tham số cho điều kiện WHERE
+            );
+            db.setTransactionSuccessful();
+            return check > 0;
+        } catch (Exception e) {
+            Log.e("DAO_TaiKhoanND", "Lỗi khi cố gắng thay đổi tên đăng nhập!", e);
+            return false;
+        } finally {
+            if (db != null) {
+                db.endTransaction();
+                db.close();
+            }
+        }
     }
 
     public boolean deleteDichVu(DichVu dichVu) {
-        Log.d("DAO_DichVu", "Deleting DichVu with ID: " + dichVu.getId_DV());
+        Log.d("DAO_TaiKhoanND", "Deleting DichVu with ID: " + dichVu.getId_DV());
         db = helper.getWritableDatabase();
         db.beginTransaction();
-        long result = db.delete("DichVu", "Id = ?", new String[]{String.valueOf(dichVu.getId_DV())});
+        long result = db.delete(
+                "TaiKhoanND",
+                "Id_TaiKhoan = ?",
+                new String[]{String.valueOf(dichVu.getId_DV())});
         db.setTransactionSuccessful();
         db.endTransaction();
         return result > 0;
