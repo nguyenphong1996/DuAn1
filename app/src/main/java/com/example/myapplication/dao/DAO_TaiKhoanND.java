@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.example.myapplication.database.DbHelper;
-import com.example.myapplication.model.DichVu;
 import com.example.myapplication.model.TaiKhoanND;
 
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class DAO_TaiKhoanND {
         this.helper = new DbHelper(context);
     }
 
-    // Lấy danh sách DichVu đang bán
+    // Lấy danh sách TaiKhoanND đang có
     public ArrayList<TaiKhoanND> getListTK() {
         db = helper.getReadableDatabase();
         ArrayList<TaiKhoanND> list = new ArrayList<TaiKhoanND>();
@@ -109,14 +108,14 @@ public class DAO_TaiKhoanND {
         }
     }
 
-    public boolean deleteDichVu(DichVu dichVu) {
-        Log.d("DAO_TaiKhoanND", "Deleting DichVu with ID: " + dichVu.getId_DV());
+    public boolean deleteTaiKhoan(TaiKhoanND taiKhoan) {
+        Log.d("DAO_TaiKhoanND", "Deleting TaiKhoanND with ID: " + taiKhoan.getId_TaiKhoan());
         db = helper.getWritableDatabase();
         db.beginTransaction();
         long result = db.delete(
                 "TaiKhoanND",
                 "Id_TaiKhoan = ?",
-                new String[]{String.valueOf(dichVu.getId_DV())});
+                new String[]{String.valueOf(taiKhoan.getId_TaiKhoan())});
         db.setTransactionSuccessful();
         db.endTransaction();
         return result > 0;
