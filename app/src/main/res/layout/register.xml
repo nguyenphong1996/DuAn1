@@ -32,7 +32,8 @@
             android:hint="Username"
             android:drawableLeft="@drawable/baseline_people_24"
             android:inputType="text"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"

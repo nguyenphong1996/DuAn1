@@ -34,7 +34,8 @@ import androidx.annotation.Nullable;
                 );
                 String data = "INSERT INTO TaiKhoanND VALUES" +
                         "(0, 'tientq@fpt.edu.vn', 'ps27928', 'Trịnh Quốc Tiến')," +
-                        "(1, 'quyls@fpt.edu.vn', 'ps27683', 'Lê Sỹ Quý')";
+                        "(1, 'quyls@fpt.edu.vn', 'ps27683', 'Lê Sỹ Quý'),"+
+                        "(2,'abc','123','bao')";
                 db.execSQL(data);
 
                 // Bảng thông tin người dùng
