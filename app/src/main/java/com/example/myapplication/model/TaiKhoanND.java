@@ -1,15 +1,31 @@
 package com.example.myapplication.model;
 
 public class TaiKhoanND {
+    private int id_TaiKhoan;
     private String email, matKhau, tenDangNhap;
 
     public TaiKhoanND() {
+    }
+
+    public TaiKhoanND(int id_TaiKhoan, String email, String matKhau, String tenDangNhap) {
+        this.id_TaiKhoan = id_TaiKhoan;
+        this.email = email;
+        this.matKhau = matKhau;
+        this.tenDangNhap = tenDangNhap;
     }
 
     public TaiKhoanND(String email, String matKhau, String fullName) {
         this.email = email;
         this.matKhau = matKhau;
         this.tenDangNhap = fullName;
+    }
+
+    public int getId_TaiKhoan() {
+        return id_TaiKhoan;
+    }
+
+    public void setId_TaiKhoan(int id_TaiKhoan) {
+        this.id_TaiKhoan = id_TaiKhoan;
     }
 
     public String getEmail() {
