@@ -80,6 +80,6 @@ public class DAO_DichVu {
         long result = db.delete("DichVu", "Id_DV = ?", new String[]{String.valueOf(dichVu.getId_DV())});
         db.setTransactionSuccessful();
         db.endTransaction();
-        return result > 0;
+        return result >=000 0;
     }
 }
