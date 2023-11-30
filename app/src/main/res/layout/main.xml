@@ -12,7 +12,8 @@
         android:layout_height="500dp"
         android:src="@drawable/circle_240"
         tools:layout_editor_absoluteX="-45dp"
-        tools:layout_editor_absoluteY="-250dp" />
+        tools:layout_editor_absoluteY="-250dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -52,7 +53,8 @@
         android:layout_margin="1dp"
         android:padding="16dp"
         tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="250dp">
+        tools:layout_editor_absoluteY="250dp"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,8 +71,10 @@
                 android:src="@drawable/giatui"/>
             <TextView
                 android:id="@+id/tvGiatUi"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textStyle="bold"
                 android:text="Tạo đơn giặt ùi"/>
         </LinearLayout>
         <LinearLayout
@@ -88,8 +92,10 @@
                 android:src="@drawable/datlich"/>
             <TextView
                 android:id="@+id/tvDatLich"
-                android:layout_width="wrap_content"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textStyle="bold"
                 android:text="Đặt lịch giao nhận"/>
         </LinearLayout>
         <LinearLayout
@@ -109,6 +115,8 @@
                 android:id="@+id/tvTraCuu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textStyle="bold"
                 android:text="Tra cứu dịch vụ"/>
         </LinearLayout>
         <LinearLayout
@@ -128,7 +136,9 @@
                 android:id="@+id/tvGiaoHang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Giao hàng"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:text="Giao hàng"/>
         </LinearLayout>
     </LinearLayout>
 
