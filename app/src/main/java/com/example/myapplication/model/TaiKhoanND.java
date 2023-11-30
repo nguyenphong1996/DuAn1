@@ -7,6 +7,13 @@ public class TaiKhoanND {
     public TaiKhoanND() {
     }
 
+    public TaiKhoanND(int id_TaiKhoan, String email, String matKhau, String tenDangNhap) {
+        this.id_TaiKhoan = id_TaiKhoan;
+        this.email = email;
+        this.matKhau = matKhau;
+        this.tenDangNhap = tenDangNhap;
+    }
+
     public TaiKhoanND(String email, String matKhau, String fullName) {
         this.email = email;
         this.matKhau = matKhau;
