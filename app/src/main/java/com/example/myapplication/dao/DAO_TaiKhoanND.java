@@ -108,16 +108,16 @@ public class DAO_TaiKhoanND {
         }
     }
 
-    public boolean deleteTaiKhoan(TaiKhoanND taiKhoan) {
-        Log.d("DAO_TaiKhoanND", "Deleting TaiKhoanND with ID: " + taiKhoan.getId_TaiKhoan());
-        db = helper.getWritableDatabase();
-        db.beginTransaction();
-        long result = db.delete(
-                "TaiKhoanND",
-                "Id_TaiKhoan = ?",
-                new String[]{String.valueOf(taiKhoan.getId_TaiKhoan())});
-        db.setTransactionSuccessful();
-        db.endTransaction();
-        return result > 0;
-    }
+//    public boolean deleteTaiKhoan(TaiKhoanND taiKhoan) {
+//        Log.d("DAO_TaiKhoanND", "Deleting TaiKhoanND with ID: " + taiKhoan.getId_TaiKhoan());
+//        db = helper.getWritableDatabase();
+//        db.beginTransaction();
+//        long result = db.delete(
+//                "TaiKhoanND",
+//                "Id_TaiKhoan = ?",
+//                new String[]{String.valueOf(taiKhoan.getId_TaiKhoan())});
+//        db.setTransactionSuccessful();
+//        db.endTransaction();
+//        return result > 0;
+//    }
 }
