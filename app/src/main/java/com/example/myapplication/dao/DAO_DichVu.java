@@ -82,5 +82,4 @@ public class DAO_DichVu {
         db.endTransaction();
         return result > 0;
     }
-    //du an 1
 }
