@@ -8,11 +8,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="500dp"
-        android:layout_height="500dp"
+        android:layout_width="554dp"
+        android:layout_height="520dp"
         android:src="@drawable/circle_240"
-        tools:layout_editor_absoluteX="-45dp"
-        tools:layout_editor_absoluteY="-250dp" />
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -35,100 +37,110 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="360dp"
         android:layout_height="180dp"
         android:background="@drawable/momo"
         android:orientation="vertical"
         android:padding="16dp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="59dp"
-        tools:ignore="MissingConstraints"></LinearLayout>
+        tools:layout_editor_absoluteY="59dp"></LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="475dp"
+        android:layout_margin="1dp"
         android:background="@drawable/rounded_corner"
         android:orientation="horizontal"
-        android:layout_margin="1dp"
         android:padding="16dp"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="250dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_weight="1"
-            android:padding="8dp"
-            android:orientation="vertical">
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
 
             <ImageView
                 android:id="@+id/imgGiatUi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/giatui"/>
+                android:src="@drawable/giatui" />
+
             <TextView
                 android:id="@+id/tvGiatUi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tạo đơn giặt ùi"/>
+                android:text="Tạo đơn giặt ùi" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_weight="1"
-            android:padding="8dp"
-            android:orientation="vertical">
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
 
             <ImageView
                 android:id="@+id/imgDatLich"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/datlich"/>
+                android:src="@drawable/datlich" />
+
             <TextView
                 android:id="@+id/tvDatLich"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Đặt lịch giao nhận"/>
+                android:text="Đặt lịch giao nhận" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_weight="1"
-            android:padding="8dp"
-            android:orientation="vertical">
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
 
             <ImageView
                 android:id="@+id/imgTraCuu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/tracuu"/>
+                android:src="@drawable/tracuu" />
+
             <TextView
                 android:id="@+id/tvTraCuu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tra cứu dịch vụ"/>
+                android:text="Tra cứu dịch vụ" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_weight="1"
-            android:padding="8dp"
-            android:orientation="vertical">
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
 
             <ImageView
                 android:id="@+id/imgGiaoHang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/giaohang"/>
+                android:src="@drawable/giaohang" />
+
             <TextView
                 android:id="@+id/tvGiaoHang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Giao hàng"
+                android:text="Giao hàng" />
         </LinearLayout>
     </LinearLayout>
 
